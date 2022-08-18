@@ -13,18 +13,14 @@ def covert_to_uniq_morsecode(words):
         morsecode_rep = ""
         # iterate through each word to get each letters
         for letter in word:
-            # Since morsecode is not case sensitive 
-            # then making all letters in same case change nothing 
-            # but help to get the appropriate position of letter
-            uppercase = letter.upper()
             # getting the ascii code for letter
-            ASCII_rep = ord(uppercase)
+            ASCII_rep = ord(letter)
             # position of letter in array
-            position_of_letter = ASCII_rep - 65
+            position_of_letter = ASCII_rep - 97
             morsecode_rep += morse_code[position_of_letter]
         transformations.add(morsecode_rep)
     
     return len(transformations)
 
 
-print(covert_to_uniq_morsecode(["a"]))
+print(covert_to_uniq_morsecode(["gin","zen","gig","msg"]))
