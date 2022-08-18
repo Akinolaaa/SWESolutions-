@@ -2,20 +2,24 @@ package com.SWE_Solutions;
 
 public class BBWISE {
 
-    public String sumOfSeries(double [] nums){
-      
-      double sum = (float)0;
-      for(int i=0;i<nums.length;i++){
-        sum+=nums[i];
-      }
-      
-      String output = String.format("%.2f", sum);
-      return output;
-    }
-    
-    public static void main(String [] args){
-      double nums [] = {1,5,8,4,8.4,5,9,7,51,3};
-      BBWISE b = new BBWISE();
-      System.out.println(b.sumOfSeries(nums));
-    }
+    public String sumOfSeries(int n) {
+		if(n<=1) {
+			return "1.00";
+		}
+		int deno=1;
+		double sum =0;
+		for(int i=0;i<n;i++) {
+			sum += (float) 1/deno;
+			deno += 3;
+		}
+		String output = String.format("%.2f", sum);
+		return output;
+	}
+	public static void main(String[] args) {
+		Printer p = new Printer();
+		
+		System.out.println(p.sumOfSeries(1));
+		System.out.println(p.sumOfSeries(2));
+		System.out.println(p.sumOfSeries(5));
+	}
 }
