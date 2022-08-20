@@ -13,15 +13,15 @@ function bestProfit(prices) {
 }
 
 //better solution
-/* function bestProfit2(prices) {
+function bestProfit2(prices) {
   let maxProfit = 0;
-  let i = 0; let j = prices.length-1;
-  while(i < j) {
-    if(prices[j] - prices[j] > maxProfit) {
-      maxProfit = prices[j] - prices[i];
-    }
-    while(prices[i] > prices[j]) {
-      i++;
+  let buy = prices[0];
+  for (let i = 1; i < prices.length; i++) {
+    if(prices[i] - buy > maxProfit){
+      maxProfit = prices[i] - buy
+    } else if (prices[i] < buy) {
+      buy = prices[i];
     }
   }
-} */
+  return maxProfit; 
+}
